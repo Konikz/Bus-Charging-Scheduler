@@ -12,45 +12,6 @@ from scheduler.time_utils import format_time
 
 st.set_page_config(page_title="Bus Charging Scheduler", layout="wide")
 
-ACCENT_COLOR = "rgb(255, 176, 0)"
-
-st.html(
-    f"""
-    <style>
-    :root {{
-        --primary-color: {ACCENT_COLOR};
-    }}
-
-    div[data-baseweb="select"] > div,
-    div[data-baseweb="select"] div[aria-expanded="true"] {{
-        border-color: {ACCENT_COLOR};
-    }}
-
-    button[kind="secondary"]:focus,
-    button[kind="secondary"]:active,
-    div[data-baseweb="tab"][aria-selected="true"],
-    div[data-baseweb="tab"][aria-selected="true"] p,
-    div[data-baseweb="tab-highlight"],
-    div[role="tab"][aria-selected="true"],
-    div[role="tab"][aria-selected="true"] p,
-    div[role="radiogroup"] button[aria-pressed="true"],
-    div[role="radiogroup"] button[aria-checked="true"] {{
-        color: {ACCENT_COLOR} !important;
-        border-color: {ACCENT_COLOR} !important;
-    }}
-
-    div[data-baseweb="tab-highlight"] {{
-        background-color: {ACCENT_COLOR} !important;
-    }}
-
-    div[data-baseweb="tab"][aria-selected="true"],
-    div[role="tab"][aria-selected="true"] {{
-        box-shadow: inset 0 -2px 0 {ACCENT_COLOR};
-    }}
-    </style>
-    """
-)
-
 
 def scenario_path(scenario_id: str) -> Path:
     return Path(__file__).resolve().parent / "data" / "scenarios" / f"{scenario_id}.json"
