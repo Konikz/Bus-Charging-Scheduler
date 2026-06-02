@@ -147,10 +147,11 @@ with bus_tab:
 
 with station_tab:
     station_df = station_schedule_frame(result)
-    station_filter = st.segmented_control(
+    station_filter = st.radio(
         "Station",
         options=["All", *scenario.stations.keys()],
-        default="All",
+        index=0,
+        horizontal=True,
     )
     if station_filter != "All":
         station_df = station_df[station_df["Station"] == station_filter]
